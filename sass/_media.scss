@@ -1,0 +1,39 @@
+.container.adaptive {
+    max-width: 320px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .container.adaptive {
+      max-width: 600px;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .container.adaptive {
+      max-width: 900px;
+    }
+  }
+  
+  @media screen and (min-width: 1140px) {
+    .container.adaptive {
+      max-width: 1140px;
+    }
+  }
+
+
+// img
+  .box {
+    width: 480px;
+    height: 320px;
+    background-image: url('photo.png');
+    background-size: 480px 320px;
+  }
+  
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .box {
+      background-image: url('photo@2x.png');
+    }
+  }

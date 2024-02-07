@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import './colors';
 
 body {
   margin: 0;
@@ -13,3 +13,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+body {
+  background-color: map-get($colors, 'background');
+}
+
+.button {
+    color: getColor('primary');
+    background-color: getColor('background');
+  }
