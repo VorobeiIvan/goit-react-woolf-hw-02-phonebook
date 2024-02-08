@@ -3,6 +3,7 @@ import Section from "./Section";
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from "./Filter";
+import { nanoid } from 'nanoid';
 import './main.css';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
 
   formSubmitHandler = data => {
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, data]
+      contacts: [...prevState.contacts, { ...data, id: nanoid() }]
     }));
   }
 
@@ -48,3 +49,5 @@ class App extends Component {
 }
 
 export default App;
+
+

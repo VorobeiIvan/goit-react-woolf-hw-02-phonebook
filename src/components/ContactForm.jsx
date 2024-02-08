@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NameInput from './NameInput';
 import NumberInput from './NumberInput';
-import shortid from 'shortid'; 
 
 class ContactForm extends Component {
   state = {
@@ -24,7 +23,7 @@ class ContactForm extends Component {
       return;
     }
 
-    this.props.onSubmit({ id: shortid.generate(), name, number });
+    this.props.onSubmit({ name, number });
     this.reset();
   };
 
