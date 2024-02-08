@@ -6,7 +6,6 @@ p {
 }
 
 ul {
-    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -26,7 +25,6 @@ button {
 }
 
 /* Section */
-.section{}
 .section-title{
     margin-bottom: 16px;
     color: rgb(97, 155, 155);
@@ -114,5 +112,30 @@ color: rgb(180, 130, 50) ;
             color: rgb(133, 181, 181);
         }
     }
-/* container */
-.container{}
+/* ContactList */
+.contact-list{    
+margin-left: 20px;
+margin-top: 20px;
+}
+
+.contact-item{    
+    width: 240px;
+    color: rgb(110, 121, 121);
+    font-size: 12px;
+}
+
+.btn-del {
+margin-left: 40px;
+    color: rgb(7, 86, 86);
+    text-transform: uppercase;
+    font-size: 6px;
+    padding: 2px 8px;
+    border: 1px solid rgb(187, 197, 197);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover,
+    focus {
+        color: azure;
+        background-color: rgb(206, 69, 69);
+    }}

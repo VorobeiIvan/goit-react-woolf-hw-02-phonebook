@@ -1,37 +1,36 @@
-import React, {Component} from 'react'
-import Section from "./Section"
-import ContactForm from './ContactForm'
-import Notification from './Notificatioon'
+//App.jsx
+import React, { Component } from 'react';
+import Section from "./Section";
+import ContactForm from './ContactForm';
+import ContactList from './ContactList'
+import Filter from "./Filter"
 import './main.css';
 
 class App extends Component {
   state = {
     contacts: [],
-    name: ''
   }
 
-  // if (isExist) {
-  //   alert(`${name} is already in contacts.`);
-  //   return
-  // }
-
-  render(){
-    const {name}=this.state;
-    return(
-      <div className='container'>
-        <Section title="Phoneboock">
-        <ContactForm/>
-      {name && <Notification message={`${name} is already on contacts`} />}
-       </Section>
-     
-       <Section title="Contacts">
-       
-       </Section>
-         </div>
-    )
+  formSubmitHandler = data => {
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, data]
+    }));
   }
 
   
-};
+  render() {
+    return (
+      <div className='container'>
+        <Section title="Phoneboock">
+           <ContactForm contacts={this.state.contacts} onSubmit={this.formSubmitHandler} />
+        </Section>
+        <Section title="Contacs">
+          <Filter contacts={this.state.contacts}/>
+           <ContactList contacts={this.state.contacts} />
+        </Section>
+      </div>
+    );
+  }
+}
 
-export default App
+export default App;
