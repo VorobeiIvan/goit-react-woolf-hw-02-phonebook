@@ -57,17 +57,19 @@ button {
 
 /* Input */
 .wrapper{
+    width: 240px;
     display: flex;
     flex-direction: column;
     gap: 4px;
     
 }
 .label{
-    width: 240px;
+    margin-left:4px ;
     color: rgb(110, 121, 121);
     font-size: 12px;
 }
 .input{
+    
     padding: 6px 12px;
     font-size: 8px;
 color: rgb(180, 130, 50) ;
@@ -119,7 +121,6 @@ margin-top: 20px;
 }
 
 .contact-item{    
-    width: 240px;
     color: rgb(110, 121, 121);
     font-size: 12px;
 }
@@ -139,3 +140,4 @@ margin-left: 40px;
         color: azure;
         background-color: rgb(206, 69, 69);
     }}
+    

@@ -1,14 +1,14 @@
-//App.jsx
 import React, { Component } from 'react';
 import Section from "./Section";
 import ContactForm from './ContactForm';
-import ContactList from './ContactList'
-import Filter from "./Filter"
+import ContactList from './ContactList';
+import Filter from "./Filter";
 import './main.css';
 
 class App extends Component {
   state = {
     contacts: [],
+    filter: '',
   }
 
   formSubmitHandler = data => {
@@ -17,16 +17,30 @@ class App extends Component {
     }));
   }
 
-  
+  changeFilter = event => {
+    this.setState({ filter: event.target.value });
+  }
+
+  deleteContact = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id)
+    }));
+  }
+
   render() {
+    const { contacts, filter } = this.state;
+    const filteredContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+
     return (
       <div className='container'>
-        <Section title="Phoneboock">
-           <ContactForm contacts={this.state.contacts} onSubmit={this.formSubmitHandler} />
+        <Section title="Phonebook">
+          <ContactForm contacts={this.state.contacts} onSubmit={this.formSubmitHandler} />
         </Section>
-        <Section title="Contacs">
-          <Filter contacts={this.state.contacts}/>
-           <ContactList contacts={this.state.contacts} />
+        <Section title="Contacts">
+          <Filter value={filter} onChange={this.changeFilter}/>
+          <ContactList contacts={filteredContacts} onDelete={this.deleteContact} />
         </Section>
       </div>
     );

@@ -1,3 +1,5 @@
+import React from 'react';
+
 const NameInput = ({ value, onChange }) => {
   return (
     <div className="wrapper">
