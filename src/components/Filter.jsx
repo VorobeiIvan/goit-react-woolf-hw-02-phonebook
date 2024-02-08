@@ -17,6 +17,6 @@ const Filter = ({ filter, onChange }) => {
       />
     </div>
   );
-}
+};
 
 export default Filter;

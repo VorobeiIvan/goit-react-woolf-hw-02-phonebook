@@ -17,6 +17,6 @@ const NameInput = ({ value, onChange }) => {
       />
     </div>
   );
-}
+};
 
 export default NameInput;

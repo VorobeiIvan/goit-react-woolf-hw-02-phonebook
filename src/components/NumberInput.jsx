@@ -17,6 +17,6 @@ const NumberInput = ({ value, onChange }) => {
       />
     </div>
   );
-}
+};
 
 export default NumberInput;
